@@ -13,7 +13,7 @@ services:
       - logging
   # index, search & agregation
   elasticsearch:
-    image: elasticsearch:5.1.2
+    image: elasticsearch:5.2.1
     container_name: elastic
     environment:
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
@@ -27,7 +27,7 @@ services:
       - logging
   # UI
   kibana:
-    image: kibana:5.1.2
+    image: kibana:5.2.1
     container_name: kibana
     ports:
       - 5601:5601
@@ -39,7 +39,7 @@ services:
       - elasticsearch
   # indexer
   logstash:
-    image: logstash:5.1.2
+    image: logstash:5.2.1
     container_name: logstash
     command: logstash -f /config/
     environment:
